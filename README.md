@@ -2,99 +2,87 @@
 
 This project showcases an attempt to summarize and simplify scientific documents by fine tuning language models on custom preprocessed data
 
-### Installation
+# Scientific Summarization and Simplification
 
-#### Clone the repository: 
+This is the GitHub repository for the project related to the research paper titled "Scientific Summarization and Simplification." In this project, we explore the importance of scientific summarization and simplification in natural language processing (NLP) and investigate the effectiveness of different preprocessing techniques and evaluation metrics.
 
-`git clone https://github.com/Prathamesh-Pawar/Summarization.git`
+## Table of Contents
 
-#### Change to the project directory: 
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Preprocessing Techniques](#preprocessing-techniques)
+- [Transfer Learning](#transfer-learning)
+- [Model Selection](#model-selection)
+- [Methodology](#methodology)
+- [Summarization Training](#summarization-training)
+- [Simplification](#simplification)
+- [Evaluation](#evaluation)
+- [Results](#results)
+- [Conclusion](#conclusion)
+- [References](#references)
 
-`cd Summarization`
+## Introduction
 
-#### Install dependencies: 
+We discuss the significance of scientific summarization and simplification in NLP and the challenges associated with these tasks. Our research highlights the potential of fine-tuning pretrained language models for scientific texts and the impact of preprocessing techniques and evaluation metrics. The experiments are conducted on a diverse dataset of scientific articles.
 
-`pip install -r requirements.txt`
+## Getting Started
 
-#### Get Huggingface login
+To get started with this project, follow these steps:
 
-Generate hugginface token to use the pretrained models and datasets.
+1. Clone the repository to your local machine:
 
-#### To generate a small sample of pre-processed data, follow these steps:
+```bash
+git clone https://github.com/yourusername/scientific-summarization.git
+```
 
-This will generate a JSON with 'topic', 'summary' and 4 preprocessed contents
+2. Install the required dependencies:
 
-`python data.py`
+```bash
+pip install -r requirements.txt
+```
 
-#### To use Summarization, follow these steps:
+3. Explore the code and datasets in the repository to replicate the experiments.
 
-`python test.py -t "This is the input text for summarization." -m "Choose from list of models"`
+## Preprocessing Techniques
 
-list of models:
-1. PrathameshPawar/pegasus_raw
-2. PrathameshPawar/pegasus_traditional
-3. PrathameshPawar/pegasus_custom
-4. PrathameshPawar/pegasus_combined
-5. PrathameshPawar/bart_raw
-6. PrathameshPawar/bart_traditional
-7. PrathameshPawar/bart_custom
-8. PrathameshPawar/bart_combined
+In this section, we describe the various preprocessing techniques used in the project, including raw, traditional, custom, and combined approaches.
 
-#### To train Summarization, follow these steps:
+## Transfer Learning
 
-This may not run, if you do not posses the sufficient cuda core and memory if you desire to run it on CPU change the `fp16=False` under Seq2SeqTrainingArgument.
+We discuss the importance of transfer learning in scientific summarization and its advantages, including improved accuracy, efficient adaptation, and generalization.
 
-`python train.py --dataset 3500_train_trad.json --model google/pegasus`
+## Model Selection
 
-#### To evaluate the Summarization, follow these steps:
+We introduce the pretrained models used in our experiments, namely BART and Pegasus, and explain why they are suitable for fine-tuning in scientific summarization.
 
-`python evaluation.py`
+## Methodology
 
-### Contributing follow these steps:
+This section outlines the methodology used in the project, including data gathering, preprocessing, training the summarization models, and simplification techniques.
 
-If you would like to contribute to Summarization, you can follow these steps:
+## Summarization Training
 
+We present the results of training the BART and Pegasus models using different forms of preprocessed data and evaluate their performance.
 
-Fork the repository.
-Create a new branch for your contribution: 
-`git checkout -b feature/your-feature-branch`
+## Simplification
 
-Make your changes and commit them: 
-`git commit -m "Add your commit message here"`
+After generating the summaries, we discuss how we further simplified the language and sentence structures for better readability.
 
-Push your changes to your forked repository: 
-`git push origin feature/your-feature-branch`
+## Evaluation
 
-Create a pull request to the main repository, explaining your changes and their significance.
+We introduce the ROUGE metrics used for evaluating the quality of generated summaries.
 
-### Contact
-For any questions, suggestions, or concerns, please feel free to contact the project maintainer at pawar.prath@northeastern.edu and sharan.a@northeastern.edu
+## Results
 
-We appreciate your interest and contributions to Summarization! Thank you for your support.
+We provide the average ROUGE scores for various preprocessing approaches and the results from using the Google T-5 simplification model.
 
+## Conclusion
 
-### Links to models and datasets
+In conclusion, we summarize our findings and highlight the importance of preprocessing, fine-tuning models, and simplification for enhancing scientific summarization.
 
-## Models
+## References
 
-### Pegasus 
+- List the relevant references and citations used in the paper.
 
-1. pegasus_raw :        https://huggingface.co/PrathameshPawar/pegasus_raw/tree/main
-2. pegasus_traditional: https://huggingface.co/PrathameshPawar/pegaus_traditional/tree/main
-3. pegasus_custom:      https://huggingface.co/PrathameshPawar/pegasus_custom/tree/main
-4. pegasus_combined:    https://huggingface.co/PrathameshPawar/pegasus_combined/tree/main
+---
 
-### Bart
-
-1. bart_raw :        https://huggingface.co/PrathameshPawar/bart_raw/tree/main
-2. bart_traditional: https://huggingface.co/PrathameshPawar/bart_traditional/tree/main
-3. bart_custom:      https://huggingface.co/PrathameshPawar/bart_custom/tree/main
-4. bart_combined:    https://huggingface.co/PrathameshPawar/bart_combined/tree/main
-
-
-## Datasets
-
-1. Train: https://huggingface.co/datasets/PrathameshPawar/10ktesttrain/tree/main
-2. Test:  https://huggingface.co/datasets/PrathameshPawar/summary_2k/tree/main
-
-
+Feel free to modify this template to fit the specifics of your project and provide details about the code, datasets, and any other resources related to your research.
